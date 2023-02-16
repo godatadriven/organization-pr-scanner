@@ -1,0 +1,12 @@
+{
+  "scriptFile": "__init__.py",
+  "bindings": [
+    {
+      "name": "tableBlob",
+      "type": "blobTrigger",
+      "direction": "in",
+      "path": "tables/pull_requests.png",
+      "connection": "AzureWebJobsStorage"
+    }
+  ]
+}

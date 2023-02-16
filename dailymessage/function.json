@@ -1,0 +1,28 @@
+{
+  "scriptFile": "__init__.py",
+  "bindings": [
+    {
+      "name": "prsStream",
+      "type": "blobTrigger",
+      "direction": "in",
+      "path": "data/pullrequests.jsonl",
+      "connection": "AzureWebJobsStorage"
+    },
+    {
+      "name": "projectsIn",
+      "type": "blob",
+      "direction": "in",
+      "connection": "AzureWebJobsStorage",
+      "dataType": "string",
+      "path": "data/projects.jsonl"
+    },
+    {
+      "name": "contributorsIn",
+      "type": "blob",
+      "direction": "in",
+      "connection": "AzureWebJobsStorage",
+      "dataType": "string",
+      "path": "data/contributors.jsonl"
+    }
+  ]
+}
