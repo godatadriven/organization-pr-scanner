@@ -9,3 +9,4 @@ Azure Functions app for scraping pull request, user and project data for all mem
 * A (monthly) tabular report which lists some elementary information about the pull requests of the past period.
 
 ## Setup
+![](presentation/pr-scanner-diagram.png)
