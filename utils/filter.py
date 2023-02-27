@@ -1,11 +1,10 @@
 import json
+import os
 import pathlib
 from datetime import date
 from typing import Dict, List
 
 import pandas as pd
-
-from definitions import YOUR_ORGANIZATION
 
 
 def load_jsonl_df_from_path(jsonl_path: pathlib.Path) -> pd.DataFrame:
@@ -46,7 +45,7 @@ def remove_self_owned(prs: pd.DataFrame, exclude_own_projects: bool) -> pd.DataF
 
 def remove_org_owned(prs: pd.DataFrame, exclude_org_projects: bool) -> pd.DataFrame:
     if exclude_org_projects:
-        return prs.loc[lambda df: df["owner_login"] != YOUR_ORGANIZATION]
+        return prs.loc[lambda df: df["owner_login"] != os.environ.get("ORGANIZATION")]
     return prs
 
 
