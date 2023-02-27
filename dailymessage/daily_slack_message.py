@@ -6,7 +6,6 @@ import pandas as pd
 from slack_bolt import App
 from slack_sdk.errors import SlackApiError
 
-from definitions import SLACK_CHANNEL
 from utils.filter import create_analysis_table
 
 
@@ -41,7 +40,10 @@ def send_message(app: App, message: str) -> None:
     """
     Send the templated message through Slack.
     """
-    response = app.client.chat_postMessage(channel=SLACK_CHANNEL, text=message)
+    response = app.client.chat_postMessage(
+        channel=os.environ.get("SLACK_CHANNEL"),
+        text=message,
+    )
     try:
         response.validate()
     except SlackApiError:
