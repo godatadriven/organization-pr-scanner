@@ -1,6 +1,3 @@
-YOUR_ORGANIZATION = "godatadriven"
-SLACK_CHANNEL = "pr"
-
 CONTRIBUTOR_FIELDS = {
     "login": "contributor_login",
     "name": "contributor_name",

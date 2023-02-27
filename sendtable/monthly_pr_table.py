@@ -3,8 +3,6 @@ from io import BytesIO
 
 from slack_bolt import App
 
-from definitions import SLACK_CHANNEL
-
 
 def image_bytes_to_buffer(image_bytes: bytes) -> BytesIO:
     image_buffer = BytesIO(image_bytes)
@@ -18,6 +16,6 @@ def send_monthly_pr_table(table_bytes: BytesIO) -> None:
     app.client.files_upload(
         title="Monthly PR Report",
         file=table_bytes,
-        channels=SLACK_CHANNEL,
+        channels=os.environ.get("SLACK_CHANNEL"),
         initial_comment="Monthly PR update! Congrats to those who contributed.",
     )
