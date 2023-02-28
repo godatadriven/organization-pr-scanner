@@ -1,0 +1,43 @@
+{
+  "scriptFile": "__init__.py",
+  "bindings": [
+    {
+      "name": "monthlyTimer",
+      "type": "timerTrigger",
+      "direction": "in",
+      "schedule": "0 0 10 1 */1 *"
+    },
+    {
+      "name": "prsIn",
+      "type": "blob",
+      "direction": "in",
+      "connection": "AzureWebJobsStorage",
+      "dataType": "string",
+      "path": "data/pullrequests.jsonl"
+    },
+    {
+      "name": "projectsIn",
+      "type": "blob",
+      "direction": "in",
+      "connection": "AzureWebJobsStorage",
+      "dataType": "string",
+      "path": "data/projects.jsonl"
+    },
+    {
+      "name": "contributorsIn",
+      "type": "blob",
+      "direction": "in",
+      "connection": "AzureWebJobsStorage",
+      "dataType": "string",
+      "path": "data/contributors.jsonl"
+    },
+    {
+      "name": "tableOut",
+      "type": "blob",
+      "dataType": "binary",
+      "path": "tables/pull_requests.png",
+      "direction": "out",
+      "connection": "AzureWebJobsStorage"
+    }
+  ]
+}
