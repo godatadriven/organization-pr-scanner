@@ -1,7 +1,7 @@
 # organization-pr-scanner
 
-![CI](https://github.com/jochemloedeman/organization-pr-tool/actions/workflows/ci.yml/badge.svg
-)
+[![Build](https://github.com/godatadriven/organization-pr-scanner/actions/workflows/ci.yml/badge.svg)](https://github.com/godatadriven/organization-pr-scanner/actions/workflows/ci.yml)
+[![Deploy](https://github.com/godatadriven/organization-pr-scanner/actions/workflows/cd.yml/badge.svg)](https://github.com/godatadriven/organization-pr-scanner/actions/workflows/cd.yml)
 
 Azure Functions app for scraping pull request, user and project data for all members of a GitHub organization. The resulting dataset is used for a set of features:
 
