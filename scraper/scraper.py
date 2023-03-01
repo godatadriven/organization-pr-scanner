@@ -130,8 +130,22 @@ def update_jsonl_on_unique_key(
     in the original.
     """
     keys = {line[key] for line in originals}
-    distinct_candidates = [line for line in candidates if line[key] not in keys]
+    unique_candidates = get_unique_items(candidates, key)
+    distinct_candidates = [line for line in unique_candidates if line[key] not in keys]
     return originals + distinct_candidates
+
+
+def get_unique_items(items: List[Dict], key: str):
+    """
+    Return a filtered version of a list of dictionaries with duplicates removed
+    """
+    unique_items = []
+    item_ids = set()
+    for item in items:
+        if item[key] not in item_ids:
+            item_ids.add(item[key])
+            unique_items.append(item)
+    return unique_items
 
 
 def integrate_new_data(
