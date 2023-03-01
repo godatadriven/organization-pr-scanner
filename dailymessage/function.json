@@ -2,8 +2,15 @@
   "scriptFile": "__init__.py",
   "bindings": [
     {
-      "name": "prsStream",
-      "type": "blobTrigger",
+      "name": "dailyTimer",
+      "type": "timerTrigger",
+      "direction": "in",
+      "schedule": "0 0 10 * * *"
+    },
+    {
+      "name": "prsIn",
+      "type": "blob",
+      "dataType": "string",
       "direction": "in",
       "path": "data/pullrequests.jsonl",
       "connection": "AzureWebJobsStorage"
