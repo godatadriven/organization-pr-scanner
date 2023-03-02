@@ -15,3 +15,14 @@ def test_update_jsonl_on_unique_key_with_duplicate(pull_requests_jsonl_duplicate
     candidates = pull_requests_jsonl_duplicate[split_point:]
     updated = update_jsonl_on_unique_key(originals, candidates, "pr_id")
     assert updated != pull_requests_jsonl_duplicate
+
+
+def test_update_jsonl_on_unique_key_with_candidate_duplicate(
+    pull_requests_jsonl_duplicate,
+):
+    split_point = len(pull_requests_jsonl_duplicate) // 2
+    originals = pull_requests_jsonl_duplicate[:split_point]
+    candidates = pull_requests_jsonl_duplicate[split_point:]
+    updated = update_jsonl_on_unique_key(originals, candidates, "pr_id")
+    updated_keys = [pr["pr_id"] for pr in updated]
+    assert len(set(updated_keys)) == len(updated_keys)
