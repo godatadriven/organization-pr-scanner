@@ -5,7 +5,8 @@
       "name": "monthlyTimer",
       "type": "timerTrigger",
       "direction": "in",
-      "schedule": "0 0 11 1 * *"
+      "schedule": "0 0 11 1 * *",
+      "useMonitor": false
     },
     {
       "name": "prsIn",

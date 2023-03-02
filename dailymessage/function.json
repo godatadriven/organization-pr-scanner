@@ -5,7 +5,8 @@
       "name": "dailyTimer",
       "type": "timerTrigger",
       "direction": "in",
-      "schedule": "0 0 10 * * *"
+      "schedule": "0 0 10 * * *",
+      "useMonitor": false
     },
     {
       "name": "prsIn",
